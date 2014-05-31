@@ -1,28 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour
+public class arenaGenerator : MonoBehaviour
 {
 
     int hexagonDiameter = 1;
+	public int inRadius = 1;
     public Transform prefab;
 
     // Use this for initialization
     void Start()
     {
-        generateFloor(10);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+		generateFloor(inRadius);
     }
 
     void generateFloor(int radius)
     {
         // http://www.redblobgames.com/grids/hexagons/#basics
-        //                                   x                   z
+        //                                   x                      z
         float[] hexCordR = { Mathf.Sqrt(3f) / 2f * hexagonDiameter, 0 };
         float[] hexCordQ = { (Mathf.Sqrt(3f) / 2f * hexagonDiameter) / 2f, 3f / 4f * hexagonDiameter };
 
